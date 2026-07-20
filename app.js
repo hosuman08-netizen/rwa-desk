@@ -8,7 +8,7 @@
   var i=0; var seen=+(localStorage.getItem('rwa_seen')||0); var root=document.getElementById('app');
   function render(){
     var c=cards[i];
-    root.innerHTML='<div class="card" style="color:#67e8f9;font-size:12px">교육 전용 · 투자 권유 아님</div><div class="card"><h2 style="color:var(--gold)">'+c.t+'</h2><p style="margin-top:10px">'+c.b+'</p><div class="row" style="margin-top:12px"><button id="prev" class="sec">이전</button><button id="next">다음</button></div><div class="sub">'+(i+1)+'/'+cards.length+'</div></div>';
+    root.innerHTML='<div class="card" style="color:#67e8f9;font-size:12px">교육 전용 · 정진 · 투자 권유 아님</div><div class="card"><h2 style="color:var(--gold)">'+c.t+'</h2><p style="margin-top:10px">'+c.b+'</p><div class="row" style="margin-top:12px"><button id="prev" class="sec">이전</button><button id="next">다음</button></div><div class="sub">'+(i+1)+'/'+cards.length+'</div></div>';
     document.getElementById('prev').onclick=function(){i=(i+cards.length-1)%cards.length;render();};
     document.getElementById('next').onclick=function(){i=(i+1)%cards.length;seen++;localStorage.setItem('rwa_seen',seen);render();try{legionTrack('activate',{i:i,seen:seen})}catch(e){}};
     if(!document.getElementById('shareCard')){
